@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    height: 100vh;
+}
+
+/* Background Images */
+.phone-bg {
+    background: url('phone-image.PNG') no-repeat center center fixed;
+    background-size: cover; /* Ensure the image is visible */
+}
+
+.laptop-bg {
+    background: url('laptop-image.png') no-repeat center center fixed;
+    background-size: cover; /* Keeps full image visible */
+}
+
+.website-bg {
+    background: url('web.png') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the whole page */
+}
+
+/* Add a background image to the body */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('service.png'); /* replace with actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+}
+
+/* Buttons */
+button {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #cc5500;
+}
+
+/* Service Lists */
+.services {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix Image Size for All Screens */
+img {
+    max-width: 300%;
+    height: auto;
+    display: block;
+    margin: 5px auto;
+}
+
+/* Ensure Background Image Covers Full Page */
+.fullscreen-bg {
+    width: 800vw;
+    height: 150vh;
+    background-size: cover;
+}
