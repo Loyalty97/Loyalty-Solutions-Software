@@ -1,24 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loyalty Solutions & Software</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loyalty Solutions & Software</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background: #f4f4f4;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: url('home.png') no-repeat center top;
+      background-size: cover;
+      color: #fff;
+      position: relative;
+    }
+
+    .header-overlay {
+      background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+      padding: 40px 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .tech-text {
+      color: #ffcc00;
+    }
+
+    .container {
+      text-align: center;
+      margin: 20px;
+    }
+
+    button {
+      background: #28a745;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 20px 30px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #1e90ff;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-content {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
 
-
-    <!-- 🔥 Page Content -->
-    <header>
-        <h1 class="flipping-text">Welcome to <span class="tech-text">Loyalty Solutions & Software</span></h1>
-        <p>Your trusted partner for IT and Tech Services</p>
-    </header>
-
-    <div class="container">
-        <button onclick="location.href='services.html'">🛠 Get Your Service</button>
+  <!-- 🔥 Page Content -->
+  <header>
+    <div class="header-overlay">
+      <h1 class="flipping-text">
+        Welcome to <span class="tech-text">Loyalty Solutions & Software</span>
+      </h1>
+      <p>Your trusted partner for IT and Tech Services</p>
     </div>
+  </header>
 
-    <script src="script.js"></script>
+  <div class="container">
+    <button onclick="location.href='services.html'">🛠 Get Your Service</button>
+  </div>
+
+  <!-- 📍 Footer -->
+  <footer>
+    <strong>Contact Us</strong>
+    <div class="footer-content">
+      Address: 427E Manthestad, Taung, 8585, North West<br>
+      Phone: +27 79 454 4443<br>
+      <a href="about.html">About</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

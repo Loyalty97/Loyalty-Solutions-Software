@@ -1,35 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laptop Services - Loyalty Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laptop Services - Loyalty Solutions</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .total-display {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-content {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body class="laptop-bg">
 
-    <header>
-        <h1>💻 Laptop Services</h1>
-        <p>Expert PC & laptop maintenance solutions.</p>
-    </header>
+  <header>
+    <h1>💻 Laptop Services</h1>
+    <p>Expert PC & laptop maintenance solutions.</p>
+  </header>
 
-    <div class="services">
-        <ul>
-            <li><input type="checkbox" value="200"> Slowness checkup - <strong>R200</strong></li>
-            <li><input type="checkbox" value="400"> Microsoft virus removal - <strong>R400</strong></li>
-            <li><input type="checkbox" value="100"> Increase internet speed - <strong>R100</strong></li>
-            <li><input type="checkbox" value="50"> Update all PC apps - <strong>R50</strong></li>
-            <li><input type="checkbox" value="500"> Administrator removal (PC hacked) - <strong>R500</strong></li>
-        </ul>
+  <div class="services">
+    <ul>
+      <li>
+        <label><input type="checkbox" value="200" data-name="Slowness checkup"> Slowness checkup - <strong>R200</strong></label>
+      </li>
+      <li>
+        <label><input type="checkbox" value="400" data-name="Microsoft virus removal"> Microsoft virus removal - <strong>R400</strong></label>
+      </li>
+      <li>
+        <label><input type="checkbox" value="100" data-name="Increase internet speed"> Increase internet speed - <strong>R100</strong></label>
+      </li>
+      <li>
+        <label><input type="checkbox" value="50" data-name="Update all PC apps"> Update all PC apps - <strong>R50</strong></label>
+      </li>
+      <li>
+        <label><input type="checkbox" value="500" data-name="Administrator removal (PC hacked)"> Administrator removal (PC hacked) - <strong>R500</strong></label>
+      </li>
+    </ul>
+  </div>
+
+  <div class="calculator">
+    <div class="total-display">
+      Total Price: R<span id="totalPrice">0</span>
     </div>
+    <br>
+    <button id="addToCartBtn">🛒 Add to Cart</button>
+  </div>
 
-    <div class="calculator">
-        <h2>Total Price: R<span id="totalPrice">0</span></h2>
-        <button id="whatsappBtn">💬 Contact on WhatsApp</button>
+  <a href="services.html"><button>⬅ Back to Services</button></a>
+
+  <footer>
+    <strong>Contact Us</strong>
+    <div class="footer-content">
+      Address: 427E Manthestad, Taung, 8585, North West<br>
+      Phone: +27 79 454 4443<br>
+      <a href="about.html">About</a>
     </div>
+  </footer>
 
-    <a href="services.html"><button>⬅ Back to Services</button></a>
+  <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const totalPriceEl = document.getElementById('totalPrice');
+    let cart = [];
 
-    <script src="script.js"></script>
+    function updateCart() {
+      cart = [];
+      let total = 0;
+
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          const name = checkbox.getAttribute('data-name');
+          const price = parseInt(checkbox.value);
+          total += price;
+          cart.push({ name, price });
+        }
+      });
+
+      totalPriceEl.textContent = total;
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+      localStorage.setItem('cartTotal', total);
+    }
+
+    checkboxes.forEach(checkbox => checkbox.addEventListener('change', updateCart));
+
+    document.getElementById('addToCartBtn').addEventListener('click', () => {
+      if (cart.length > 0) {
+        window.location.href = 'cart.html';
+      } else {
+        alert('Please select at least one service before proceeding to cart.');
+      }
+    });
+
+    updateCart(); // Load totals if any are pre-checked
+  </script>
+
 </body>
 </html>
